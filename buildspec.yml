@@ -6,7 +6,9 @@ phases:
     commands:
       - pip install --upgrade pip
       - echo "Installing dependencies..."
-      - pip install -r requirements.txt -t lib
+#      - pip install -r requirements.txt -t lib
+      - pip install -r requirements.txt -t lib > install.log 2>&1
+      - cat install.log
   build:
     commands:
       - echo "Zipping deployment package..."
